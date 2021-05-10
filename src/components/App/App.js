@@ -1,32 +1,36 @@
-import React from 'react';
-import Header from '../Header/Header';
-import SearchBox from '../SearchBox/SearchBox';
-import './App.css';
+import React from "react";
+import Header from "./../Header/Header";
+import SearchBox from "../SearchBox/SearchBox";
+import "./App.css";
 
-
-
-class App extends React.Component{
+class App extends React.Component {
     state ={
-        headerText: "Find Project Name!"
+        headerText: "Find Project Name it!",
+        headerExpanded: true,
     }
 
-    render(){
-        return (
-            <div>
-                <Header />
-               {/* <h3>{this.state.headerText}</h3>  */}
-               <SearchBox />
-            </div>
-        )
+    handleInputChange = (inputText) => {
+        this.setState({headerExpanded : inputText.length > 0 ? false : true})
+        
+        
     }
+
+  render() {
+    return (
+      <div>
+        <Header headerExpanded ={this.state.headerExpanded} headerTitle={this.state.headerText} />
+        <SearchBox handleInputChange ={this.handleInputChange} />
+      </div>
+    );
+  }
 }
 
 // function App() {
 //     return (
-        
+
 //             <h1>This is my first Functional Component Based file</h1>
-       
+
 //     )
 // }
 
-export default App
+export default App;

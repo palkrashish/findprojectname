@@ -1,6 +1,6 @@
 .search-container{
     display: flex;
-    justify-self: center;
+    justify-content: center;
     margin: 10p;
 }
 
@@ -11,12 +11,13 @@
     border-width: 0;
     background: #a592f2;
     color: #e7e9f0;
+    border-radius: 50px;
     box-shadow: 0 0 5px rgba(255, 255,255, 0.5);
 }
 
-.search-input ::placeholder{
+.search-input::placeholder{
     color: #e7e9f0;
 }
-.search-input :focus{
+.search-input:focus{
     outline: none;
 }
